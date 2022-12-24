@@ -17,11 +17,17 @@ public class AoCFileReader
         String row = "";
         while ((row = buffer.readLine()) != null)
         {
-            String[] data = row.split(",");
-            for(int i = 0; i < data.length; i++)
-            {
-                result.add(Integer.parseInt(data[i]));
-            }
+//            String[] data = row.split(",");
+//            for(int i = 0; i < data.length; i++)
+//            {
+//                if(data[i].equals(""))
+                if(!row.equals(""))
+                {
+                    result.add(Integer.parseInt(row));
+                }else{
+                    result.add(0);
+                }
+//            }
         }
         buffer.close();
         return result;
