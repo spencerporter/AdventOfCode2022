@@ -9,8 +9,12 @@ public class Main {
 
         System.out.println(caloriesList);
 
-        int highestTotal = CalorieHandler.calculateMostCalariesByElf(caloriesList);
+        ArrayList<Integer> sortedElfCalories = CalorieHandler.addAndASortElfCalories(caloriesList);
 
-        System.out.println("Highest Calories " + highestTotal);
+        System.out.println("Highest Calories " + sortedElfCalories.get(0));
+
+        Integer topThreeCalories = sortedElfCalories.get(0) + sortedElfCalories.get(1) + sortedElfCalories.get(2);
+
+        System.out.println("3 Highest Calories " + topThreeCalories);
     }
 }
