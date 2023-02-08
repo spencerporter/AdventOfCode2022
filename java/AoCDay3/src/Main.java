@@ -4,15 +4,17 @@ import java.util.Scanner;
 import java.util.ArrayList;
 public class Main {
     public static void main(String[] args) throws IOException {
-//        ArrayList<String> playList = AoCFileReader.readAoCFile("./inputs/simple.txt");
-        ArrayList<String> playList = AoCFileReader.readAoCFile("./inputs/input.txt");
+//        ArrayList<String> ruckList = AoCFileReader.readAoCFile("./inputs/simple.txt");
+        ArrayList<String> ruckList = AoCFileReader.readAoCFile("./inputs/input.txt");
 
-        System.out.println(playList);
-        Integer score = RockPaperScissors.calculateRPSScore(playList);
-
-        System.out.println("Score Results: " + score);
-
-        Integer day2Score = RockPaperScissors.calculateRPSScoreSpecial(playList);
-        System.out.println("Day 2 Results " + day2Score);
+        ArrayList<RuckSack> allRucks = new ArrayList<RuckSack>();
+        int totalRuckPriorityCount = 0;
+        for(String ruckString : ruckList){
+            RuckSack newRuckSack = new RuckSack(ruckString);
+            allRucks.add(newRuckSack);
+            totalRuckPriorityCount += newRuckSack.priority;
+        }
+        System.out.println("Total Rucksack Priority: " + totalRuckPriorityCount);
+//        System.out.println(allRucks);
     }
 }
