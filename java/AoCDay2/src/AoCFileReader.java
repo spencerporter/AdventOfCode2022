@@ -9,25 +9,16 @@ public class AoCFileReader
 
     }
 
-    public static ArrayList<Integer> readAoCFile(String filePath) throws IOException
+    public static ArrayList<String> readAoCFile(String filePath) throws IOException
     {
-        ArrayList<Integer> result = new ArrayList<Integer>();
+        ArrayList<String> result = new ArrayList<>();
         File inputFile = new File(filePath);
         BufferedReader buffer = new BufferedReader(new FileReader(inputFile));
         String row = "";
         while ((row = buffer.readLine()) != null)
         {
-//            String[] data = row.split(",");
-//            for(int i = 0; i < data.length; i++)
-//            {
-//                if(data[i].equals(""))
-                if(!row.equals(""))
-                {
-                    result.add(Integer.parseInt(row));
-                }else{
-                    result.add(0);
-                }
-//            }
+            System.out.println("Input: " + row);
+            result.add(row);
         }
         buffer.close();
         return result;
