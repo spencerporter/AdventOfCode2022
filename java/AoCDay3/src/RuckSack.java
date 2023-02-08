@@ -2,6 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 public class RuckSack{
+    public ArrayList<String> allContainerContents;
     public String container1Key = "";
     public ArrayList<String> container1Contents;
     public String container2Key = "";
@@ -19,6 +20,9 @@ public class RuckSack{
         ArrayList<String> fullList = new ArrayList<String>(
                 Arrays.asList(strSplit));
 
+        allContainerContents = new ArrayList<String>();
+        allContainerContents.addAll(fullList);
+
         List<String> list1 = fullList.subList(0,fullList.size()/2);
         List<String> list2 = fullList.subList((fullList.size()/2),fullList.size());
 
@@ -28,8 +32,8 @@ public class RuckSack{
         container2Contents = new ArrayList<String>();
         container2Contents.addAll(list2);
 
-        System.out.println("Container 1: " + container1Contents);
-        System.out.println("Container 2: " + container2Contents);
+//        System.out.println("Container 1: " + container1Contents);
+//        System.out.println("Container 2: " + container2Contents);
 
         for(String container1Item : container1Contents){
             if(container2Contents.contains(container1Item)){
@@ -37,7 +41,7 @@ public class RuckSack{
             }
         }
 
-        System.out.println("Shared Item: " + sharedItem);
+//        System.out.println("Shared Item: " + sharedItem);
 
         if(ALPHABET.contains(sharedItem)){
             priority = ALPHABET.indexOf(sharedItem) + 1;
@@ -45,7 +49,7 @@ public class RuckSack{
             priority = ALPHABET.indexOf(sharedItem.toLowerCase()) + 27;
         }
 
-        System.out.println("Priority: " + priority);
+//        System.out.println("Priority: " + priority);
     }
 }
 
