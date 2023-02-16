@@ -17,10 +17,10 @@ public class CleaningPair {
         elf2Start = new Integer(elf2Ranges[0]);
         elf2End = new Integer(elf2Ranges[1]);
         System.out.println("Checking Pair 1: " + elf1Start + "--" + elf1End + " vs Pair 2: " + elf2Start + "--" + elf2End);
-        //Check if Elf1 Contains Elf2 Range
-        if(elf1Start <= elf2Start && elf1End >= elf2End) { isOverlap = true; };
+        //Check if Elf1 Contains Elf2 Range (For Pt1, change last Start to End
+        if(elf1Start <= elf2Start && elf1End >= elf2Start) { isOverlap = true; };
 
         //Check if Elf2 Contains Elf1 Range
-        if(elf2Start <= elf1Start && elf2End >= elf1End) { isOverlap = true; };
+        if(elf2Start <= elf1Start && elf2End >= elf1Start) { isOverlap = true; };
     }
 }
