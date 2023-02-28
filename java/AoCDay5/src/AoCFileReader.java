@@ -15,8 +15,9 @@ public class AoCFileReader
         File inputFile = new File(filePath);
         BufferedReader buffer = new BufferedReader(new FileReader(inputFile));
         String row = "";
-        while ((row = buffer.readLine()) != null)
+        while (buffer.ready())
         {
+            row = buffer.readLine();
             System.out.println("Input: " + row);
             result.add(row);
         }

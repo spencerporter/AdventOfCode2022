@@ -7,16 +7,10 @@ public class Main {
 //        ArrayList<String> inputList = AoCFileReader.readAoCFile("./inputs/simple.txt");
         ArrayList<String> inputList = AoCFileReader.readAoCFile("./inputs/input.txt");
 
-        Integer pairOverlaps = 0;
-        ArrayList<CleaningPair> cleaningPairs = new ArrayList<CleaningPair>();
-        for(String pairText: inputList){
-            CleaningPair newPair = new CleaningPair(pairText);
+        CargoHold cargoHold = new CargoHold(inputList);
+//        cargoHold.executeMovesStack();
+        cargoHold.executeMovesQueue();
 
-            cleaningPairs.add(newPair);
-
-            if(newPair.isOverlap) { pairOverlaps++; }
-        }
-
-        System.out.println("Total Overlap: " + pairOverlaps);
+        System.out.println("Top Values " + cargoHold.getTopCargo());
     }
 }
